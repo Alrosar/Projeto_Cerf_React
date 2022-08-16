@@ -1,13 +1,17 @@
 import Card from "../Card";
 
-const Cards = () => {
+const Cards = (props) => {
+    console.log(props, 'props')
+    const { info } = props;
     return (
         <div className="cards">
-            <Card text="Beber Água"/>
-            <Card text="Estudar aula da Cerf"/>
-            <Card text="Ligar para encanador"/>
-            <Card text="Fazer almoço"/>
-            <Card text="Ir na academia"/>
+            {
+                info.map((item, index) => {
+                    return (
+                        <Card key={index} text={item} />
+                    )
+                })
+            }
         </div>
     )
 }
