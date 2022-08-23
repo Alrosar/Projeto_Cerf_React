@@ -1,10 +1,19 @@
+import '../../styles/css/Card.css'
+
+
 const Card = (props) => {
     console.log(props)
-    const { text } = props;
-
+    const { text, change, id } = props;
 
     return (
-        <div>{text}</div>
+        <div className="card">
+            <div className="card-inner">
+                <div className='card-remove' onClick={() => change(id)}>X</div>
+                <div className="card-text">
+                    <p className="card-text-p">{text}</p>
+                </div>
+            </div>
+        </div>
     )
 }
 
